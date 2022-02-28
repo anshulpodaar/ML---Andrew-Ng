@@ -40,8 +40,6 @@ Theta_grad = zeros(size(Theta));
 %                     partial derivatives w.r.t. to each element of Theta
 %
 
-
-
 ### Collaborative filtering Cost Function
 J_reg_term = (lambda / 2) * (sum(sum((Theta.^2))) + sum(sum((X).^2)));
 J = ((1/2) * sum(sum((((X*Theta').*R) - Y).^2))) + J_reg_term;
@@ -51,11 +49,6 @@ X_grad_reg_term = lambda * X;
 X_grad = ((((X*Theta').*R) - Y) * Theta) + X_grad_reg_term;
 Theta_grad_reg_term = lambda * Theta;
 Theta_grad = ((((X*Theta').*R) - Y)' * X) + Theta_grad_reg_term;
-
-
-
-
-
 
 % =============================================================
 
